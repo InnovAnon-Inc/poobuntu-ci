@@ -18,7 +18,17 @@ LABEL org.label-schema.vcs-url="https://github.com/InnovAnon-Inc/poobuntu-ci"
 COPY ci-dpkg.list .
 RUN apt-fast install `cat ci-dpkg.list`
 
-COPY gopath.sh /etc/profile.d/
+#COPY gopath.sh /etc/profile.d/
+#RUN /bin/echo -e "`cat /etc/profile.d/gopath.sh`\n\n`cat /etc/bash.bashrc`"    > /etc/bash.bashrc
+#RUN /bin/echo -e "`cat /etc/profile.d/gopath.sh`\n\n`cat /root/.bashrc`"       > /root/.bashrc
+#RUN /bin/echo -e "`cat /etc/profile.d/gopath.sh`\n\n`cat /root/.bash_profile`" > /root/.bash_profile
+#RUN echo "PATH=$HOME/go/bin:$PATH" >> /etc/environment
+
+#ENV HOME=~
+#ENV PATH=${HOME}/go/bin:${PATH}
+ENV GOPATH=${HOME}/go
+ENV PATH=${PATH}:${GOPATH}/bin
+
 RUN go get -u github.com/tcnksm/ghr
 
 #WORKDIR /
