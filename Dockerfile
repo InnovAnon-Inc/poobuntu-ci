@@ -18,7 +18,7 @@ LABEL org.label-schema.vcs-url="https://github.com/InnovAnon-Inc/poobuntu-ci"
 COPY ci-dpkg.list .
 RUN apt-fast install `cat ci-dpkg.list`
 
-RUN mv -v goflags.sh /etc/profile.d
+COPY goflags.sh /etc/profile.d/
 RUN go get -u github.com/tcnksm/ghr
 
 #WORKDIR /
