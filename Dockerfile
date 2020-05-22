@@ -16,7 +16,7 @@ LABEL org.label-schema.vcs-url="https://github.com/InnovAnon-Inc/poobuntu-ci"
 # Run the command inside your image filesystem.
 # Copy the file from your host to your current location.
 COPY ci-dpkg.list .
-RUN apt-fast install `grep -ov ^[^#] ci-dpkg.list`
+RUN apt-fast install `grep -v '^[\^#]' ci-dpkg.list`
 
 #COPY gopath.sh /etc/profile.d/
 #RUN /bin/echo -e "`cat /etc/profile.d/gopath.sh`\n\n`cat /etc/bash.bashrc`"    > /etc/bash.bashrc
