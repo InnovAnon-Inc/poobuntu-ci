@@ -16,7 +16,6 @@ LABEL org.label-schema.vcs-url="https://github.com/InnovAnon-Inc/poobuntu-ci"
 # Run the command inside your image filesystem.
 # Copy the file from your host to your current location.
 COPY ci-dpkg.list .
-RUN apt-fast install `grep -v '^[\^#]' ci-dpkg.list`
 
 #COPY gopath.sh /etc/profile.d/
 #RUN /bin/echo -e "`cat /etc/profile.d/gopath.sh`\n\n`cat /etc/bash.bashrc`"    > /etc/bash.bashrc
@@ -29,7 +28,8 @@ RUN apt-fast install `grep -v '^[\^#]' ci-dpkg.list`
 ENV GOPATH=${HOME}/go
 ENV PATH=${PATH}:${GOPATH}/bin
 
-RUN go get -u github.com/tcnksm/ghr
+RUN apt-fast install `grep -v '^[\^#]' ci-dpkg.list` \
+ && go get -u github.com/tcnksm/ghr
 
 #RUN wget -O- https://github.com/github-release/github-release/releases/download/v0.8.1/linux-amd64-github-release.bz2 \
 #  | pbzip2 -d > /usr/local/bin/github-release
