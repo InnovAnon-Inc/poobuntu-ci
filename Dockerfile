@@ -2,16 +2,16 @@
 FROM innovanon/poobuntu-dev:latest
 MAINTAINER Innovations Anonymous <InnovAnon-Inc@protonmail.com>
 
-LABEL version="1.0"
-LABEL maintainer="Innovations Anonymous <InnovAnon-Inc@protonmail.com>"
-LABEL about="poobuntu-dev flavored for continuous integration"
-LABEL org.label-schema.build-date=$BUILD_DATE
-LABEL org.label-schema.license="PDL (Public Domain License)"
-LABEL org.label-schema.name="poobuntu-ci"
-LABEL org.label-schema.url="InnovAnon-Inc.github.io/poobuntu-ci"
-LABEL org.label-schema.vcs-ref=$VCS_REF
-LABEL org.label-schema.vcs-type="Git"
-LABEL org.label-schema.vcs-url="https://github.com/InnovAnon-Inc/poobuntu-ci"
+LABEL version="1.0"                                                     \
+      maintainer="Innovations Anonymous <InnovAnon-Inc@protonmail.com>" \
+      about="poobuntu-dev flavored for continuous integration"          \
+      org.label-schema.build-date=$BUILD_DATE                           \
+      org.label-schema.license="PDL (Public Domain License)"            \
+      org.label-schema.name="poobuntu-ci"                               \
+      org.label-schema.url="InnovAnon-Inc.github.io/poobuntu-ci"        \
+      org.label-schema.vcs-ref=$VCS_REF                                 \
+      org.label-schema.vcs-type="Git"                                   \
+      org.label-schema.vcs-url="https://github.com/InnovAnon-Inc/poobuntu-ci"
 
 # Run the command inside your image filesystem.
 # Copy the file from your host to your current location.
