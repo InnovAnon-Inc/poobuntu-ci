@@ -31,7 +31,7 @@ ENV PATH=${PATH}:${GOPATH}/bin
 RUN apt-fast install `grep -v '^[\^#]' ci-dpkg.list` \
  && go get -u github.com/tcnksm/ghr
 
-#RUN wget -O- https://github.com/github-release/github-release/releases/download/v0.8.1/linux-amd64-github-release.bz2 \
+#RUN pcurl https://github.com/github-release/github-release/releases/download/v0.8.1/linux-amd64-github-release.bz2 \
 #  | pbzip2 -d > /usr/local/bin/github-release
 #RUN chmod -v +x /usr/local/bin/github-release
 
