@@ -1,5 +1,9 @@
 # Use the official image as a parent image.
-FROM innovanon/poobuntu-dev:latest
+ARG VERSION
+ARG OS
+FROM innovanon/${OS}-dev${VERSION}:latest
+ARG VERSION
+ARG OS
 MAINTAINER Innovations Anonymous <InnovAnon-Inc@protonmail.com>
 
 LABEL version="1.0"                                                     \

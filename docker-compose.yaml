@@ -1,0 +1,54 @@
+version: '3.3'
+services:
+  poobuntu-ci:
+    #build: .
+    build:
+      context: .
+      args:
+        - VERSION=
+        - OS=poobuntu
+    hostname: poobuntu-ci
+    #environment:
+    #  - VERSION=
+    image: innovanon/poobuntu-ci:latest
+    container_name: innovanon/poobuntu-ci
+
+  poobuntu-ci-20.04:
+    #build: .
+    build:
+      context: .
+      args:
+        - VERSION=-20.04
+        - OS=poobuntu
+    hostname: poobuntu-ci-20.04
+    #environment:
+    #  - VERSION=-20.04
+    image: innovanon/poobuntu-ci-20.04:latest
+    container_name: innovanon/poobuntu-ci-20.04
+
+  poobuntu-ci-18.04:
+    #build: .
+    build:
+      context: .
+      args:
+        - VERSION=-18.04
+        - OS=poobuntu
+    hostname: poobuntu-ci-18.04
+    #environment:
+    #  - VERSION=-18.04
+    image: innovanon/poobuntu-ci-18.04:latest
+    container_name: innovanon/poobuntu-ci-18.04
+
+  poobuntu-ci-16.04:
+    #build: .
+    build:
+      context: .
+      args:
+        - VERSION=-16.04
+        - OS=poobuntu
+    hostname: poobuntu-ci-16.04
+    #environment:
+    #  - VERSION=-16.04
+    image: innovanon/poobuntu-ci-16.04:latest
+    container_name: innovanon/poobuntu-ci-16.04
+
