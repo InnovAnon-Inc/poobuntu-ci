@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 set -exu
 
 apt-fast purge `grep -v '^[\^#]' ci-dpkg.list`
