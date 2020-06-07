@@ -32,7 +32,8 @@ COPY ci-dpkg.list .
 ENV GOPATH=${HOME}/go
 ENV PATH=${PATH}:${GOPATH}/bin
 
-RUN apt-fast install `grep -v '^[\^#]' ci-dpkg.list` \
+RUN apt-fast update \
+ && apt-fast install `grep -v '^[\^#]' ci-dpkg.list` \
  && go get -u github.com/tcnksm/ghr
 
 #RUN pcurl https://github.com/github-release/github-release/releases/download/v0.8.1/linux-amd64-github-release.bz2 \
